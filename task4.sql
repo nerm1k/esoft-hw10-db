@@ -9,7 +9,7 @@ DROP CONSTRAINT fk_course,
 ADD CONSTRAINT fk_course FOREIGN KEY (course_id)
 REFERENCES courses (course_id) ON DELETE CASCADE;
 
--- удалил студентов, которые записаны на один курс и имеющих айди меньше 4
+-- удалил студента, который записан на один курс и имеющий айди меньше 4 (чтобы удалился один)
 DELETE FROM students
 WHERE student_id = (
 	SELECT student_id
